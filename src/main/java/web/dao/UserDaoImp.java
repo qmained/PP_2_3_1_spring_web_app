@@ -40,7 +40,6 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public void updateById(long id, User user) {
-        entityManager.detach(user);
         entityManager.merge(user);
         flushAndClear();
     }
